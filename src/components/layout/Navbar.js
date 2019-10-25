@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ icon, title }) => {
     return (
-      <nav className="navbar bg-primary">
-        <h1>
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+        <h1 className="navbar-brand">
           <i className={icon} />{' '}{title}
         </h1>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link to="/" className="nav-link">Home</Link>
           </li>
-          <li>
-            <Link to="/About">About</Link>
+          <li className="nav-item">
+            <Link to="/about" className="nav-link">About</Link>
           </li>
         </ul>
       </nav>
