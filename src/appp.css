@@ -23,9 +23,6 @@ ul {
   list-style: none;
 }
 
-img {
-  width: 100%;
-}
 
 /* Utilities */
 .container {
@@ -77,12 +74,6 @@ img {
   text-align: left;
 }
 
-/* Cards */
-.card {
-  padding: 1rem;
-  border: #ccc 1px dotted;
-  margin: 0.7rem 0;
-}
 
 /* List */
 .list {
@@ -145,24 +136,6 @@ img {
   margin: 3rem 0;
 }
 
-/* Grid */
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2rem;
-}
 
 .grid-2-3 {
   display: grid;
@@ -372,42 +345,3 @@ table th {
 }
 
 /* Mobile Styles */
-@media (max-width: 700px) {
-  .hide-sm {
-    display: none;
-  }
-
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
-  }
-
-  /* Text Styles */
-  .x-large {
-    font-size: 3rem;
-  }
-
-  .large {
-    font-size: 2rem;
-  }
-
-  .lead {
-    font-size: 1rem;
-  }
-
-  /* Navbar */
-  .header {
-    display: block;
-    text-align: center;
-  }
-
-  .header h1 {
-    margin-bottom: 0.6rem;
-  }
-
-  .header ul {
-    text-align: center;
-    justify-content: center;
-  }
-}

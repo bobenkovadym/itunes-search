@@ -1,28 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ icon, title }) => {
-    return (
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+  return (
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
         <h1 className="navbar-brand">
-          <i className={icon} />{' '}{title}
-        </h1>
-        <ul className="navbar-nav mr-auto">
+          <i className={icon} /> <span className="hide-sm">{title}</span>
+        </h1>{" "}
+        <ul className="navbar-nav mr-auto grid">
           <li className="nav-item">
-            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
           </li>
           <li className="nav-item">
-            <Link to="/about" className="nav-link">About</Link>
+            <Link to="/about" className="nav-link">
+              About
+            </Link>
           </li>
         </ul>
-      </nav>
-    );
-  };
+    </nav>
+  );
+};
 
 Navbar.defaultProps = {
-  title: 'iTunes Search',
-  icon: 'fab fa-itunes-note'
+  title: "iTunes Search",
+  icon: "fab fa-itunes-note"
 };
 
 Navbar.propTypes = {
