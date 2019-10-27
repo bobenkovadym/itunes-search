@@ -1,12 +1,13 @@
 import React, { useContext, Fragment } from 'react';
 import Artists from './Artists';
 import Tracks from './Tracks';
+import Movies from './Movies';
 import MainContext from '../../context/mainContext';
 import Spinner from '../layout/Spinner';
 
 const Content = () => {
   const mainContext = useContext(MainContext);
-  const { artists, loading, music } = mainContext;
+  const { artists, loading, music, movies } = mainContext;
 
   return !loading ? <Spinner /> : <Fragment>
     {artists && (<Fragment>
@@ -21,9 +22,18 @@ const Content = () => {
     {music && (<Fragment>
         <span className="font-weight-bold">Music</span>
         <hr/>
-        <div className="grid-4">
+        <div className="grid-3">
           {music.map(track => (
             <Tracks key={track.artistId} track={track} />
+          ))}
+        </div>
+      </Fragment>)}
+    {movies && (<Fragment>
+        <span className="font-weight-bold">Movies</span>
+        <hr/>
+        <div className="grid-3">
+          {movies.map(movie => (
+            <Movies key={movie.artistId} movie={movie} />
           ))}
         </div>
       </Fragment>)}

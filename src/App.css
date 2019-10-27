@@ -12,6 +12,11 @@ body {
   color: #333;
 }
 
+audio {
+  display: block;
+  width: 100%;
+}
+
 img {
   width: 100%;
 }
@@ -29,6 +34,12 @@ img {
   grid-gap: 0.5rem;
 }
 
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -39,6 +50,10 @@ img {
 @media (max-width: 1200px) {
   .grid-4 {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -57,6 +72,12 @@ img {
 
   .lead {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid-3 {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

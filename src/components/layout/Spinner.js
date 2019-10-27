@@ -7,6 +7,7 @@ const Spinner = () => {
     width: '200px',
     margin: 'auto',
 }
+
   return(
     <Fragment>
       <img src={spinner}
