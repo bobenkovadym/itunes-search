@@ -46,7 +46,6 @@ img {
   grid-gap: 2rem;
 }
 
-
 @media (max-width: 1200px) {
   .grid-4 {
     grid-template-columns: repeat(3, 1fr);

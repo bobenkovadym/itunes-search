@@ -20,6 +20,28 @@ export default (state, action) => {
         artists: action.payload,
         loading: false
       };
+    case GET_MOVIES:
+      return {
+        ...state,
+        movies: action.payload,
+        loading: false
+      };
+    case GET_MUSIC:
+      return {
+        ...state,
+        music: action.payload,
+        loading: false
+      };
+    case SET_ALERT:
+      return {
+        ...state,
+        alert: action.payload
+      };
+    case REMOVE_ALERT:
+      return {
+        ...state,
+        alert: null
+      };
     default:
 
   }

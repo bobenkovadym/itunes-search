@@ -36,12 +36,32 @@ const MainState = props => {
     }
   };
 
-  const getMusic = () => {};
+  const getMusic = async text => {
+    try {
+      const res = await axios.get(
+        `https://itunes.apple.com/search?term=${text}&limit=18&entity=musicTrack`
+      );
+      dispatch({ type: GET_MUSIC, payload: res.data.results });
+    } catch(err) {
+      console.error(err.message);
+    }
+  };
 
-  const getMovies = () => {};
+  const getMovies = async text => {
+    try {
+      const res = await axios.get(
+        `https://itunes.apple.com/search?term=${text}&limit=18&entity=movie`
+      );
+      dispatch({ type: GET_MOVIES, payload: res.data.results });
+    } catch(err) {
+      console.error(err.message);
+    }
+  };
 
-  const setAlert = () => {
-    //clearAlert
+  const setAlert = text => {
+    dispatch({ type: SET_ALERT, payload: text });
+
+    setTimeout(() => dispatch({ type: REMOVE_ALERT }), 5000);
   };
 
 

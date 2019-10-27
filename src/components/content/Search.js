@@ -5,13 +5,23 @@ const Search = () => {
   const [text, setText] = useState('');
 
   const mainContext = useContext(MainContext);
-  const { getArtists } = mainContext;
+  const { getArtists, getMusic, getMovies, setAlert } = mainContext;
+
+  const onClick = () => {
+    if (text === '') {
+      setAlert('Nothing to search')
+    } else {
+      getArtists(text);
+      getMusic(text);
+      getMovies(text);
+    }
+  };
 
   return (
     <div className="input-group mb-3">
       <input onChange={(e) => setText(e.target.value)} type="text" className="form-control" placeholder="your request..." />
       <div className="input-group-append">
-        <button onClick={() => getArtists(text)} className="btn btn-outline-secondary" type="button">Search</button>
+        <button onClick={onClick} className="btn btn-outline-secondary" type="button">Search</button>
       </div>
     </div>
   );

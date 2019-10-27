@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import MainContext from '../../context/mainContext';
 
 const Alert = () => {
+  const mainContext = useContext(MainContext);
   return (
-    <div className="alert alert-dark" role="alert">
-      <i className="fas fa-info" />{' '}Nothing to search...
-    </div>
+    mainContext.alert !== null && (
+      <div className="alert alert-dark" role="alert">
+        <i className="fas fa-info" /> {mainContext.alert}
+      </div>
+    )
   );
 };
 

@@ -10,14 +10,13 @@ const Artists = ({
     const options = {
        'url': artistLinkUrl,
        'encoding': 'utf-8',
-       'allMedia': true
+       allMedia: true
      };
 
     ogs(options, (err, res) => {
         if(err) {
         console.log(err);
       } else {
-        console.log(res.data);
         const x = res.data.ogImage[0].url;
         const image = x.substring(0, x.lastIndexOf("/") + 1) + "500x500.jpg";
         setImage(image);

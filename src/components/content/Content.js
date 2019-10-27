@@ -9,15 +9,6 @@ const Content = () => {
   const mainContext = useContext(MainContext);
   const { artists, loading, music, movies } = mainContext;
 
-  if (
-    artists.length === 0 &&
-    music.length === 0 &&
-    movies.length === 0 &&
-    !loading
-  ) {
-    return <h3 className="text-center text-muted">Results</h3>;
-  }
-
   return loading ? (
     <Spinner />
   ) : (
