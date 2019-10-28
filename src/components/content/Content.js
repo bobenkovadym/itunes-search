@@ -30,7 +30,7 @@ const Content = () => {
           <hr />
           <div className="grid-3">
             {music.map(track => (
-              <Tracks key={track.artistId} track={track} />
+              <Tracks key={track.trackId} track={track} />
             ))}
           </div>
         </Fragment>
@@ -41,7 +41,7 @@ const Content = () => {
           <hr />
           <div className="grid-3">
             {movies.map(movie => (
-              <Movies key={movie.artistId} movie={movie} />
+              <Movies key={movie.trackId} movie={movie} />
             ))}
           </div>
         </Fragment>

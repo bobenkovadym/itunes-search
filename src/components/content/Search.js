@@ -5,7 +5,7 @@ const Search = () => {
   const [text, setText] = useState('');
 
   const mainContext = useContext(MainContext);
-  const { getArtists, getMusic, getMovies, setAlert } = mainContext;
+  const { getArtists, getMusic, getMovies, setAlert, getAll } = mainContext;
 
   const onClick = () => {
     if (text === '') {

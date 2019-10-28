@@ -24,8 +24,13 @@ const MainState = props => {
 
   const setLoading = () => dispatch({ type: SET_LOADING });
 
+  const setAlert = text => {
+    dispatch({ type: SET_ALERT, payload: text });
+
+    setTimeout(() => dispatch({ type: REMOVE_ALERT }), 5000);
+  };
+
   const getArtists = async text => {
-    setLoading();
     try {
       const res = await axios.get(
         `https://itunes.apple.com/search?term=${text}&limit=12&entity=allArtist`
@@ -42,7 +47,7 @@ const MainState = props => {
         `https://itunes.apple.com/search?term=${text}&limit=18&entity=musicTrack`
       );
       dispatch({ type: GET_MUSIC, payload: res.data.results });
-    } catch(err) {
+    } catch (err) {
       console.error(err.message);
     }
   };
@@ -53,18 +58,28 @@ const MainState = props => {
         `https://itunes.apple.com/search?term=${text}&limit=18&entity=movie`
       );
       dispatch({ type: GET_MOVIES, payload: res.data.results });
-    } catch(err) {
+    } catch (err) {
       console.error(err.message);
     }
   };
 
-  const setAlert = text => {
-    dispatch({ type: SET_ALERT, payload: text });
-
-    setTimeout(() => dispatch({ type: REMOVE_ALERT }), 5000);
+  const getAll = async text => {
+    setLoading();
+    try {
+      await getArtists(text);
+      await getMusic(text);
+      await getMovies(text);
+      if (
+        state.artists.length === 0 &&
+        state.music.length === 0 &&
+        state.movies.length === 0
+      ) {
+        setAlert('Oops, it looks like nothing was found...');
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
   };
-
-
 
   return (
     <MainContext.Provider
