@@ -9,7 +9,8 @@ import {
   GET_MOVIES,
   SET_ALERT,
   REMOVE_ALERT,
-  SET_LOADING
+  SET_LOADING,
+  GET_ALL
 } from './types';
 
 const MainState = props => {
@@ -79,9 +80,31 @@ const MainState = props => {
 
   const getAll = text => {
     setLoading();
-    getArtists(text);
-    getMusic(text);
-    getMovies(text);
+    axios
+      .all([
+        axios.get(
+          `https://itunes.apple.com/search?term=${text}&limit=12&entity=allArtist`
+        ),
+        axios.get(
+          `https://itunes.apple.com/search?term=${text}&limit=18&entity=musicTrack`
+        ),
+        axios.get(
+          `https://itunes.apple.com/search?term=${text}&limit=18&entity=movie`
+        )
+      ])
+      .then(
+        axios.spread((artists, music, movies) => {
+          if (
+            artists.data.results.length === 0 &&
+            music.data.results.length === 0 &&
+            movies.data.results.length === 0
+          ) {
+            setAlert('No results...');
+          }
+          dispatch({ type: GET_ALL, payload: { artists, music, movies } });
+        })
+      )
+      .catch(err => console.error(err.message));
   };
 
   return (
