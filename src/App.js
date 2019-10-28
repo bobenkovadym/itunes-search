@@ -1,11 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MainState from './context/MainState';
 
-import Navbar from './components/layout/Navbar';
+import Header from './components/layout/Header';
 import Alert from './components/layout/Alert';
-import Home from './components/pages/Home';
-import About from './components/pages/About';
+import Search from './components/content/Search';
+import Content from './components/content/Content';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -13,16 +12,12 @@ import './App.css';
 const App = () => {
   return (
     <MainState>
-      <Router>
-        <Navbar />
-        <div className="container">
-          <Alert />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-          </Switch>
-        </div>
-      </Router>
+      <Header />
+      <div className="container">
+        <Alert />
+        <Search />
+        <Content />
+      </div>
     </MainState>
   );
 };

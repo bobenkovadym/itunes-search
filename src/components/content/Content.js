@@ -9,13 +9,32 @@ const Content = () => {
   const mainContext = useContext(MainContext);
   const { artists, loading, music, movies } = mainContext;
 
-  if (!loading && artists.length === 0 && music.length === 0 && movies.length === 0) {
+  if (
+    !loading &&
+    artists.length === 0 &&
+    music.length === 0 &&
+    movies.length === 0
+  ) {
     return (
       <div className="about">
-        <h2 className="text-muted">About This App</h2><hr/>
-        <p className="text-muted">Simple single page application for searching artists, music, movies on iTunes.</p>
-        <p className="text-muted">This project was bootstrapped with "Create React App".</p>
-        <p className="text-muted">This project was bootstrapped with "Create React App".</p>
+        <h2 className="text-muted">About This App</h2>
+        <hr />
+        <p className="text-muted">
+          Simple single page application for searching content (artists, music,
+          movies) on iTunes.
+        </p>
+        <p className="text-muted">
+          This project was written with{' '}
+          <span className="font-weight-bold">
+            ReactJS using Context API and Hooks.
+          </span>
+          <br /> Main configuration was set with{' '}
+          <span className="font-weight-bold">'Create React App'.</span> I also
+          used libraries like{' '}
+          <span className="font-weight-bold">
+            uuid, open graph srcaper, axios, bootstrap.
+          </span>
+        </p>
       </div>
     );
   }

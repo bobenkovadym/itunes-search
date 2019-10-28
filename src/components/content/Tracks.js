@@ -23,8 +23,9 @@ const Tracks = ({
           Your browser does not support the
           <code>audio</code> element.
         </audio>
-        <hr/>
-        <span className="font-weight-bold">{artistName}</span><br />
+        <hr />
+        <span className="font-weight-bold">{artistName}</span>
+        <br />
         <p className=""> Genre: {primaryGenreName}</p>
         <a href={trackViewUrl} className="btn btn-primary">
           Show album

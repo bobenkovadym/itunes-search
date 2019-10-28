@@ -12,20 +12,15 @@ const Search = () => {
     if (text === '') {
       setAlert('Nothing to search...');
     } else {
-      if(value === 'All') {
+      if (value === 'All') {
         getAll(text);
       } else if (value === 'People') {
         getArtists(text);
       } else if (value === 'Music') {
         getMusic(text);
-      } else if (value === 'Movies')
-        getMovies(text);
+      } else if (value === 'Movies') getMovies(text);
     }
   };
-
-  const onChange = e => {
-    ;
-  }
 
   return (
     <Fragment>
@@ -37,27 +32,19 @@ const Search = () => {
           placeholder="your request..."
           aria-label="Text input with dropdown button"
         />
-        <select className="custom-select" onChange={e => setValue(e.target.value)}>
-          <option defaultValue="All">
-            All
-          </option>
-          <option value="People">
-            People
-          </option>
-          <option value="Music">
-            Music
-          </option>
-          <option value="Movies">
-            Movies
-          </option>
+        <select
+          className="custom-select"
+          onChange={e => setValue(e.target.value)}
+        >
+          <option defaultValue="All">All</option>
+          <option value="People">People</option>
+          <option value="Music">Music</option>
+          <option value="Movies">Movies</option>
         </select>
         <div className="input-group-append">
           <button
             className="btn btn-outline-secondary"
             type="submit"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
             onClick={onClick}
           >
             Search

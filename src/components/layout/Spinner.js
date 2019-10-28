@@ -5,16 +5,14 @@ const Spinner = () => {
   const spinnerStyles = {
     display: 'block',
     width: '200px',
-    margin: 'auto',
-}
+    margin: 'auto'
+  };
 
-  return(
+  return (
     <Fragment>
-      <img src={spinner}
-      alt="Loading..."
-      style={spinnerStyles}/>
+      <img src={spinner} alt="Loading..." style={spinnerStyles} />
     </Fragment>
   );
-}
+};
 
 export default Spinner;
