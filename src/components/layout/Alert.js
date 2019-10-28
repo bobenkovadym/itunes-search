@@ -4,11 +4,11 @@ import MainContext from '../../context/mainContext';
 const Alert = () => {
   const mainContext = useContext(MainContext);
   return (
-    mainContext.alert !== null && (
-      <div className="alert alert-dark" role="alert">
-        <i className="fas fa-info" /> {mainContext.alert}
+    mainContext.alerts.length > 0 && mainContext.alerts.map(alert => (
+      <div key={alert.id} className="alert alert-dark" role="alert">
+        <i className="fas fa-info" /> {' '} {alert.text}
       </div>
-    )
+    ))
   );
 };
 

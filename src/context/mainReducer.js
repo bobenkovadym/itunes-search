@@ -35,14 +35,13 @@ export default (state, action) => {
     case SET_ALERT:
       return {
         ...state,
-        alert: action.payload
+        alerts: [action.payload, ...state.alerts]
       };
     case REMOVE_ALERT:
       return {
         ...state,
-        alert: null
+        alerts: state.alerts.filter(alert => alert.id !== action.payload)
       };
     default:
-
   }
 };

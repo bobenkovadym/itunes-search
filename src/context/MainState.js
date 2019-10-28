@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import MainContext from './mainContext';
 import mainReducer from './mainReducer';
 import axios from 'axios';
+import uuid from 'uuid';
 import {
   GET_ARTISTS,
   GET_MUSIC,
@@ -17,7 +18,7 @@ const MainState = props => {
     music: [],
     movies: [],
     loading: false,
-    alert: null
+    alerts: []
   };
 
   const [state, dispatch] = useReducer(mainReducer, initialState);
@@ -25,16 +26,21 @@ const MainState = props => {
   const setLoading = () => dispatch({ type: SET_LOADING });
 
   const setAlert = text => {
-    dispatch({ type: SET_ALERT, payload: text });
+    const id = uuid.v4();
+    dispatch({ type: SET_ALERT, payload: { text, id } });
 
-    setTimeout(() => dispatch({ type: REMOVE_ALERT }), 5000);
+    setTimeout(() => dispatch({ type: REMOVE_ALERT, payload: id }), 5000);
   };
 
   const getArtists = async text => {
+    setLoading();
     try {
       const res = await axios.get(
         `https://itunes.apple.com/search?term=${text}&limit=12&entity=allArtist`
       );
+      if (res.data.results.length === 0) {
+        setAlert('No artists...');
+      }
       dispatch({ type: GET_ARTISTS, payload: res.data.results });
     } catch (err) {
       console.error(err.message);
@@ -42,10 +48,14 @@ const MainState = props => {
   };
 
   const getMusic = async text => {
+    setLoading();
     try {
       const res = await axios.get(
         `https://itunes.apple.com/search?term=${text}&limit=18&entity=musicTrack`
       );
+      if (res.data.results.length === 0) {
+        setAlert('No music...');
+      }
       dispatch({ type: GET_MUSIC, payload: res.data.results });
     } catch (err) {
       console.error(err.message);
@@ -53,32 +63,25 @@ const MainState = props => {
   };
 
   const getMovies = async text => {
+    setLoading();
     try {
       const res = await axios.get(
         `https://itunes.apple.com/search?term=${text}&limit=18&entity=movie`
       );
+      if (res.data.results.length === 0) {
+        setAlert('No movies...');
+      }
       dispatch({ type: GET_MOVIES, payload: res.data.results });
     } catch (err) {
       console.error(err.message);
     }
   };
 
-  const getAll = async text => {
+  const getAll = text => {
     setLoading();
-    try {
-      await getArtists(text);
-      await getMusic(text);
-      await getMovies(text);
-      if (
-        state.artists.length === 0 &&
-        state.music.length === 0 &&
-        state.movies.length === 0
-      ) {
-        setAlert('Oops, it looks like nothing was found...');
-      }
-    } catch (err) {
-      console.error(err.message);
-    }
+    getArtists(text);
+    getMusic(text);
+    getMovies(text);
   };
 
   return (
@@ -88,10 +91,11 @@ const MainState = props => {
         music: state.music,
         movies: state.movies,
         loading: state.loading,
-        alert: state.alert,
+        alerts: state.alerts,
         getArtists,
         getMusic,
         getMovies,
+        getAll,
         setAlert
       }}
     >

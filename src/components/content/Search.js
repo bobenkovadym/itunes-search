@@ -9,11 +9,9 @@ const Search = () => {
 
   const onClick = () => {
     if (text === '') {
-      setAlert('Nothing to search')
+      setAlert('Nothing to search...');
     } else {
-      getArtists(text);
-      getMusic(text);
-      getMovies(text);
+      getAll(text);
     }
   };
 
