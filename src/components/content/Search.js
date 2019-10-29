@@ -24,7 +24,7 @@ const Search = () => {
 
   return (
     <Fragment>
-      <div className="input-group">
+      <div className="input-group mb-3">
         <input
           onChange={e => setText(e.target.value)}
           type="text"

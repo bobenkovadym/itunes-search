@@ -58,7 +58,7 @@ const Content = () => {
         <Fragment>
           <span className="font-weight-bold">Music</span>
           <hr />
-          <div className="grid-3">
+          <div className="grid-4">
             {music.map(track => (
               <Tracks key={track.trackId} track={track} />
             ))}

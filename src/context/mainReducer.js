@@ -5,7 +5,8 @@ import {
   GET_ALL,
   SET_ALERT,
   REMOVE_ALERT,
-  SET_LOADING
+  SET_LOADING,
+  SET_TRACK_ID
 } from './types';
 
 export default (state, action) => {
@@ -56,6 +57,11 @@ export default (state, action) => {
       return {
         ...state,
         alerts: state.alerts.filter(alert => alert.id !== action.payload)
+      };
+    case SET_TRACK_ID:
+      return {
+        ...state,
+        track: action.payload
       };
     default:
   }

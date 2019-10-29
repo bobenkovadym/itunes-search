@@ -16,7 +16,7 @@ const Artists = ({
 
     ogs(options, (err, res) => {
       if (err) {
-        console.log(err);
+        console.error(err);
       } else {
         const imgArray = res.data.ogImage;
         if (imgArray.length !== 0) {
