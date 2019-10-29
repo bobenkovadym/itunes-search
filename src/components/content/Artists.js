@@ -4,13 +4,14 @@ import not_found from './not_found.png';
 import PropTypes from 'prop-types';
 
 const Artists = ({
-  artist: { artistName, primaryGenreName, artistType, artistLinkUrl }
+  artist: { artistName, primaryGenreName, artistType, artistLinkUrl, artistId }
 }) => {
   const [img, setImage] = useState('');
+  const artistsUrl = artistLinkUrl.substring(0, artistLinkUrl.lastIndexOf('?'));
 
   useEffect(() => {
     const options = {
-      url: artistLinkUrl,
+      url: artistsUrl,
       encoding: 'utf-8',
       allMedia: true
     };
