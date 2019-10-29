@@ -10,7 +10,7 @@ const Search = () => {
 
   const onClick = () => {
     if (text === '') {
-      setAlert('Nothing to search...');
+      setAlert("Request field should'nt be empty...");
     } else {
       if (value === 'All') {
         getAll(text);
@@ -29,8 +29,7 @@ const Search = () => {
           onChange={e => setText(e.target.value)}
           type="text"
           className="form-control"
-          placeholder="your request..."
-          aria-label="Text input with dropdown button"
+          placeholder="Type your request here..."
         />
         <select
           className="custom-select"

@@ -17,144 +17,7 @@ import {
 const MainState = props => {
   const initialState = {
     artists: [],
-    music: [
-      {
-        "wrapperType":"track",
-        "kind":"song",
-        "artistId":266740,
-        "collectionId":205743706,
-        "trackId":2055391,
-        "artistName":"James Horner & Céline Dion",
-        "collectionName":"Titanic (Music from the Motion Picture)",
-        "trackName":"My Heart Will Go On (Love Theme from \"Titanic\")",
-        "collectionCensoredName":"Titanic",
-        "trackCensoredName":"My Heart Will Go On (Love Theme from \"Titanic\")",
-        "collectionArtistName":"James Horner",
-        "artistViewUrl":"https://music.apple.com/us/artist/james-horner/266740?uo=4",
-        "collectionViewUrl":"https://music.apple.com/us/album/my-heart-will-go-on-love-theme-from-titanic/205743706?i=205745391&uo=4",
-        "trackViewUrl":"https://music.apple.com/us/album/my-heart-will-go-on-love-theme-from-titanic/205743706?i=205745391&uo=4",
-        "previewUrl":"https://audio-ssl.itunes.apple.com/itunes-assets/Music/48/0e/17/mzm.smzezyhc.aac.p.m4a",
-        "artworkUrl30":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/30x30bb.jpg",
-        "artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/60x60bb.jpg",
-        "artworkUrl100":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/100x100bb.jpg",
-        "collectionPrice":9.99,
-        "trackPrice":1.29,
-        "releaseDate":"1997-11-18T08:00:00Z",
-        "collectionExplicitness":"notExplicit",
-        "trackExplicitness":"notExplicit",
-        "discCount":1,
-        "discNumber":1,
-        "trackCount":15,
-        "trackNumber":14,
-        "trackTimeMillis":310733,
-        "country":"USA",
-        "currency":"USD",
-        "primaryGenreName":"Soundtrack",
-        "isStreamable":true
-      },
-      {
-        "wrapperType":"track",
-        "kind":"song",
-        "artistId":266740,
-        "collectionId":205743706,
-        "trackId":2045391,
-        "artistName":"James Horner & Céline Dion",
-        "collectionName":"Titanic (Music from the Motion Picture)",
-        "trackName":"My Heart Will Go On (Love Theme from \"Titanic\")",
-        "collectionCensoredName":"Titanic",
-        "trackCensoredName":"My Heart Will Go On (Love Theme from \"Titanic\")",
-        "collectionArtistName":"James Horner",
-        "artistViewUrl":"https://music.apple.com/us/artist/james-horner/266740?uo=4",
-        "collectionViewUrl":"https://music.apple.com/us/album/my-heart-will-go-on-love-theme-from-titanic/205743706?i=205745391&uo=4",
-        "trackViewUrl":"https://music.apple.com/us/album/my-heart-will-go-on-love-theme-from-titanic/205743706?i=205745391&uo=4",
-        "previewUrl":"https://audio-ssl.itunes.apple.com/itunes-assets/Music/48/0e/17/mzm.smzezyhc.aac.p.m4a",
-        "artworkUrl30":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/30x30bb.jpg",
-        "artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/60x60bb.jpg",
-        "artworkUrl100":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/100x100bb.jpg",
-        "collectionPrice":9.99,
-        "trackPrice":1.29,
-        "releaseDate":"1997-11-18T08:00:00Z",
-        "collectionExplicitness":"notExplicit",
-        "trackExplicitness":"notExplicit",
-        "discCount":1,
-        "discNumber":1,
-        "trackCount":15,
-        "trackNumber":14,
-        "trackTimeMillis":310733,
-        "country":"USA",
-        "currency":"USD",
-        "primaryGenreName":"Soundtrack",
-        "isStreamable":true
-      },
-      {
-        "wrapperType":"track",
-        "kind":"song",
-        "artistId":266740,
-        "collectionId":205743706,
-        "trackId":2057451,
-        "artistName":"James Horner & Céline Dion",
-        "collectionName":"Titanic (Music from the Motion Picture)",
-        "trackName":"My Heart Will Go On (Love Theme from \"Titanic\")",
-        "collectionCensoredName":"Titanic",
-        "trackCensoredName":"My Heart Will Go On (Love Theme from \"Titanic\")",
-        "collectionArtistName":"James Horner",
-        "artistViewUrl":"https://music.apple.com/us/artist/james-horner/266740?uo=4",
-        "collectionViewUrl":"https://music.apple.com/us/album/my-heart-will-go-on-love-theme-from-titanic/205743706?i=205745391&uo=4",
-        "trackViewUrl":"https://music.apple.com/us/album/my-heart-will-go-on-love-theme-from-titanic/205743706?i=205745391&uo=4",
-        "previewUrl":"https://audio-ssl.itunes.apple.com/itunes-assets/Music/48/0e/17/mzm.smzezyhc.aac.p.m4a",
-        "artworkUrl30":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/30x30bb.jpg",
-        "artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/60x60bb.jpg",
-        "artworkUrl100":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/100x100bb.jpg",
-        "collectionPrice":9.99,
-        "trackPrice":1.29,
-        "releaseDate":"1997-11-18T08:00:00Z",
-        "collectionExplicitness":"notExplicit",
-        "trackExplicitness":"notExplicit",
-        "discCount":1,
-        "discNumber":1,
-        "trackCount":15,
-        "trackNumber":14,
-        "trackTimeMillis":310733,
-        "country":"USA",
-        "currency":"USD",
-        "primaryGenreName":"Soundtrack",
-        "isStreamable":true
-      },
-      {
-        "wrapperType":"track",
-        "kind":"song",
-        "artistId":266740,
-        "collectionId":205743706,
-        "trackId":2057453,
-        "artistName":"James Horner & Céline Dion",
-        "collectionName":"Titanic (Music from the Motion Picture)",
-        "trackName":"My Heart Will Go On (Love Theme from \"Titanic\")",
-        "collectionCensoredName":"Titanic",
-        "trackCensoredName":"My Heart Will Go On (Love Theme from \"Titanic\")",
-        "collectionArtistName":"James Horner",
-        "artistViewUrl":"https://music.apple.com/us/artist/james-horner/266740?uo=4",
-        "collectionViewUrl":"https://music.apple.com/us/album/my-heart-will-go-on-love-theme-from-titanic/205743706?i=205745391&uo=4",
-        "trackViewUrl":"https://music.apple.com/us/album/my-heart-will-go-on-love-theme-from-titanic/205743706?i=205745391&uo=4",
-        "previewUrl":"https://audio-ssl.itunes.apple.com/itunes-assets/Music/48/0e/17/mzm.smzezyhc.aac.p.m4a",
-        "artworkUrl30":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/30x30bb.jpg",
-        "artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/60x60bb.jpg",
-        "artworkUrl100":"https://is1-ssl.mzstatic.com/image/thumb/Music/v4/04/72/1a/04721a51-8fe3-4a4e-5b8a-1c7dc230745e/source/100x100bb.jpg",
-        "collectionPrice":9.99,
-        "trackPrice":1.29,
-        "releaseDate":"1997-11-18T08:00:00Z",
-        "collectionExplicitness":"notExplicit",
-        "trackExplicitness":"notExplicit",
-        "discCount":1,
-        "discNumber":1,
-        "trackCount":15,
-        "trackNumber":14,
-        "trackTimeMillis":310733,
-        "country":"USA",
-        "currency":"USD",
-        "primaryGenreName":"Soundtrack",
-        "isStreamable":true
-      }
-    ],
+    music: [],
     movies: [],
     loading: false,
     alerts: [],
@@ -179,7 +42,7 @@ const MainState = props => {
         `https://itunes.apple.com/search?term=${text}&limit=12&entity=allArtist`
       );
       if (res.data.results.length === 0) {
-        setAlert('No artists...');
+        setAlert('No personalities found for your request...');
       }
       dispatch({ type: GET_ARTISTS, payload: res.data.results });
     } catch (err) {
@@ -194,7 +57,7 @@ const MainState = props => {
         `https://itunes.apple.com/search?term=${text}&limit=18&entity=musicTrack`
       );
       if (res.data.results.length === 0) {
-        setAlert('No music...');
+        setAlert('No music found for your request...');
       }
       dispatch({ type: GET_MUSIC, payload: res.data.results });
     } catch (err) {
@@ -209,7 +72,7 @@ const MainState = props => {
         `https://itunes.apple.com/search?term=${text}&limit=18&entity=movie`
       );
       if (res.data.results.length === 0) {
-        setAlert('No movies...');
+        setAlert('No movies found for your request...');
       }
       dispatch({ type: GET_MOVIES, payload: res.data.results });
     } catch (err) {
@@ -238,7 +101,7 @@ const MainState = props => {
             music.data.results.length === 0 &&
             movies.data.results.length === 0
           ) {
-            setAlert('No results...');
+            setAlert('Oops, sorry but nothing was found...');
           }
           dispatch({ type: GET_ALL, payload: { artists, music, movies } });
         })

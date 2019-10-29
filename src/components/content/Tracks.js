@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useContext } from 'react';
 import MainContext from '../../context/mainContext';
+import PropTypes from "prop-types";
 
 const Tracks = ({
   track: {
@@ -24,16 +25,15 @@ const Tracks = ({
   const audio = useRef();
 
   useEffect(() => {
-      audio.current.id = trackId;
-      if(track !== audio.current.id) {
-        audio.current.pause();
-      }
-      audio.current.onplay = () => {
-        console.log('setted id: ', audio.current.id);
-        setTrackId(audio.current.id);
-      };
-      //eslint-disable-next-line
-    });
+    audio.current.id = trackId;
+    if (track !== audio.current.id) {
+      audio.current.pause();
+    }
+    audio.current.onplay = () => {
+      setTrackId(audio.current.id);
+    };
+    //eslint-disable-next-line
+  });
 
   return (
     <div className="card" style={{ width: '100%' }}>
@@ -44,17 +44,30 @@ const Tracks = ({
           <i className="fas fa-dollar-sign" />{' '}
           <span className="font-weight-bold">{trackPrice}</span>
         </h6>
-        <audio ref={audio} controls controlsList="nodownload" src={previewUrl} type="audio/x-m4a"></audio>
+        <audio
+          ref={audio}
+          controls
+          controlsList="nodownload"
+          src={previewUrl}
+          type="audio/x-m4a"
+        ></audio>
         <hr />
         <span className="font-weight-bold">{artistName}</span>
         <br />
-        <p> Genre: {primaryGenreName} <br/> Country: {country}</p>
+        <p>
+          {' '}
+          Genre: {primaryGenreName} <br /> Country: {country}
+        </p>
         <a href={trackViewUrl} className="btn btn-primary">
           Show album
         </a>
       </div>
     </div>
   );
+};
+
+Tracks.propTypes = {
+  track: PropTypes.object.isRequired
 };
 
 export default Tracks;

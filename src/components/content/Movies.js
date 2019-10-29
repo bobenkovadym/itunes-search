@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from "prop-types";
 
 const Movies = ({
   movie: {
@@ -43,6 +44,10 @@ const Movies = ({
       </div>
     </div>
   );
+};
+
+Movies.propTypes = {
+  movie: PropTypes.object.isRequired
 };
 
 export default Movies;

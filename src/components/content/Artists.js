@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ogs from 'open-graph-scraper';
 import not_found from './not_found.png';
+import PropTypes from "prop-types";
+
 
 const Artists = ({
   artist: { artistName, primaryGenreName, artistType, artistLinkUrl }
@@ -44,6 +46,10 @@ const Artists = ({
       </div>
     </div>
   );
+};
+
+Artists.propTypes = {
+  artist: PropTypes.object.isRequired
 };
 
 export default Artists;
