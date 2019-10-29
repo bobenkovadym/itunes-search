@@ -64,5 +64,6 @@ export default (state, action) => {
         track: action.payload
       };
     default:
+      return state;
   }
 };

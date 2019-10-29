@@ -39,7 +39,7 @@ const MainState = props => {
     setLoading();
     try {
       const res = await axios.get(
-        `https://itunes.apple.com/search?term=${text}&limit=12&entity=allArtist`
+        `https://itunes.apple.com/search?term=${text}&limit=12&entity=musicArtist`
       );
       if (res.data.results.length === 0) {
         setAlert('No personalities found for your request...');
