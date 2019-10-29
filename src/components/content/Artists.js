@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ogs from 'open-graph-scraper';
 import not_found from './not_found.png';
-import PropTypes from "prop-types";
-
+import PropTypes from 'prop-types';
 
 const Artists = ({
   artist: { artistName, primaryGenreName, artistType, artistLinkUrl }
@@ -39,7 +38,7 @@ const Artists = ({
       <div className="card-body">
         <h5 className="card-title">{artistName}</h5>
         <p className="text-monospace">{artistType}</p>
-        <p> Genre: {primaryGenreName}</p>
+        {primaryGenreName && <p> Genre: {primaryGenreName}</p>}
         <a href={artistLinkUrl} className="btn btn-primary">
           More
         </a>

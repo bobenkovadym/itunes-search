@@ -42,7 +42,7 @@ const Tracks = ({
         <h5 className="card-title">{trackName}</h5>
         <h6>
           <i className="fas fa-dollar-sign" />{' '}
-          <span className="font-weight-bold">{trackPrice}</span>
+          {trackPrice && <span className="font-weight-bold">{trackPrice}</span>}
         </h6>
         <audio
           ref={audio}
